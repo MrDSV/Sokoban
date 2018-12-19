@@ -57,10 +57,12 @@ namespace Sokoban
             else if (gameState.IsGameOver)
             {
                 spriteBatch.DrawString(this.StateFont, "GameOver", new Vector2(80, heigth / 3), Color.DarkRed);
+                spriteBatch.DrawString(this.StateFont, "Esc", new Vector2(165, heigth / 2), Color.White);
             }
             else
             {
                 spriteBatch.DrawString(this.StateFont, "Steps: " + gameState.CountSteps, new Vector2(80, heigth / 3), Color.DarkRed);
+                spriteBatch.DrawString(this.StateFont, "Enter", new Vector2(165, heigth / 2), Color.White);
             }
         }
     }
