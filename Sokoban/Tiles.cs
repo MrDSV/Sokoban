@@ -11,7 +11,7 @@ namespace Sokoban
 {
     class Tiles
     {
-        protected Texture2D texture;
+        private Texture2D texture;
         private Rectangle rectangle;
         private static ContentManager content;
 
@@ -23,7 +23,7 @@ namespace Sokoban
             { rectangle = value; }
         }
 
-        public static ContentManager Content
+       public static ContentManager Content
         {
             get
             { return content; }
@@ -35,15 +35,13 @@ namespace Sokoban
         {
             spriteBatch.Draw(texture, rectangle, Color.White);
         }
-    }
 
-    class TilesLoader : Tiles
-    {
-        public TilesLoader(int i, Rectangle newRectangle)
+
+        public Tiles(int i, Rectangle newRectangle)
         {
             texture = Content.Load<Texture2D>("Tile" + i);
             Rectangle = newRectangle;
         }
+
     }
 }
-
