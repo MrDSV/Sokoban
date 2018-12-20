@@ -11,12 +11,12 @@ namespace Sokoban.Models
     class Level
     {
         const int sizeTile = 32;
-        private List<TilesLoader> allTiles = new List<TilesLoader>();
+        private List<Tiles> allTiles = new List<Tiles>();
         private int width;
         private int heigth;
         private int[,] map;
 
-        public List<TilesLoader> AllTiles => allTiles;
+        public List<Tiles> AllTiles => allTiles;
 
         public int Width
         {
@@ -72,7 +72,7 @@ namespace Sokoban.Models
                 {
                     if (map[j, i] > 0)
                     {
-                        AllTiles.Add(new TilesLoader(map[j, i], new Rectangle(i * sizeTile, j * sizeTile, sizeTile, sizeTile)));
+                        AllTiles.Add(new Tiles(map[j, i], new Rectangle(i * sizeTile, j * sizeTile, sizeTile, sizeTile)));
                     }
                 }
             }
